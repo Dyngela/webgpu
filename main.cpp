@@ -1,8 +1,13 @@
 #include <webgpu/webgpu.h>
+#include "spdlog/spdlog.h"
 
 #include <iostream>
 
 int main (int, char**) {
+
+    spdlog::info("Welcome to spdlog version {}.{}.{}  !", SPDLOG_VER_MAJOR, SPDLOG_VER_MINOR,
+                     SPDLOG_VER_PATCH);
+
     // We create a descriptor
     WGPUInstanceDescriptor desc = {};
     desc.nextInChain = nullptr;

@@ -7,9 +7,10 @@ project(
 set(CMAKE_CXX_STANDARD 23)
 
 add_subdirectory(vendor/webgpu)
-
+add_subdirectory(vendor/spdlog)
 add_executable(App main.cpp)
 
+target_link_libraries(App PRIVATE spdlog)
 target_link_libraries(App PRIVATE webgpu)
 target_copy_webgpu_binaries(App)
 
