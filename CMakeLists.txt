@@ -5,13 +5,18 @@ project(
         LANGUAGES CXX C # programming languages used by the project
 )
 set(CMAKE_CXX_STANDARD 23)
+set(GLFW_PATH "vendor/glfw")
 
 add_subdirectory(vendor/webgpu)
 add_subdirectory(vendor/spdlog)
+add_subdirectory(vendor/glfw)
+
+# Include directories
 add_executable(App main.cpp)
 
 target_link_libraries(App PRIVATE spdlog)
 target_link_libraries(App PRIVATE webgpu)
+target_link_libraries(App PRIVATE glfw)
 target_copy_webgpu_binaries(App)
 
 set_target_properties(App PROPERTIES

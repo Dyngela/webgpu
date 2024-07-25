@@ -1,5 +1,6 @@
 #include <webgpu/webgpu.h>
 #include "spdlog/spdlog.h"
+#include <glfw/glfw3.h>
 
 #include <iostream>
 
